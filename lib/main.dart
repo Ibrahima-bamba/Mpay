@@ -1,7 +1,11 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:mpay/desktop/desktop_first_screen.dart';
 import 'package:mpay/firebase_options.dart';
+import 'package:mpay/phone/phone_first_screen.dart';
+import 'package:mpay/redirection.dart';
+import 'package:mpay/tablets/tablet_first_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,31 +32,12 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
- 
-  @override
-  Widget build(BuildContext context) {
-
-    // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text("Salut"),
+      home: const Redirection(
+        onPhone: PhoneFirstScreen(), 
+        onTablet: TabletFirstScreen(), 
+        onDesktop: DesktopFirstScreen(),
       ),
-      body: Container(),// This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
+
