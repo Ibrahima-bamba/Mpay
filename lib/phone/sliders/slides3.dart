@@ -18,7 +18,34 @@ class ThirdOnboardingScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            const SizedBox(height: 60),
+             const SizedBox(height: 10),
+             Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 40,
+                    height: 5,
+                    color: AppColors.grisClair, // Trait gris
+                  ),
+                  const SizedBox(width: 8),
+                  Container(
+                    width: 40,
+                    height: 5,
+                    color: AppColors.grisClair, // Trait violet (actif)
+                  ),
+                  const SizedBox(width: 8),
+                  Container(
+                    width: 40,
+                    height: 5,
+                    color: AppColors.violet, // Trait gris
+                  ),
+                ],
+              ),
+            ),
+
+            const SizedBox(height: 12),
             // Grille d'images
             Expanded(
               flex: 2,

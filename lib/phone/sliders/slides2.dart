@@ -22,7 +22,35 @@ class OnboardingScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            const SizedBox(height: 60),
+             const SizedBox(height: 10),
+            // Ancre d'évolution (trois traits)
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 40,
+                    height: 5,
+                    color: AppColors.grisClair, // Trait gris
+                  ),
+                  const SizedBox(width: 8),
+                  Container(
+                    width: 40,
+                    height: 5,
+                    color: AppColors.violet, // Trait violet (actif)
+                  ),
+                  const SizedBox(width: 8),
+                  Container(
+                    width: 40,
+                    height: 5,
+                    color: AppColors.grisClair, // Trait gris
+                  ),
+                ],
+              ),
+            ),
+
+            const SizedBox(height: 12),
 
             // Grille d'images style maçon avec animation
             Expanded(
@@ -62,8 +90,13 @@ class OnboardingScreen extends StatelessWidget {
                           Icons.lens_rounded,
                           color: AppColors.violet,
                         ),
-                        title: Text("Explorez les outils.", 
-                        style: TextStyle(fontFamily: AppsFont.font2,  fontSize: 17),),
+                        title: Text(
+                          "Explorez les outils.",
+                          style: TextStyle(
+                            fontFamily: AppsFont.font2,
+                            fontSize: 17,
+                          ),
+                        ),
                       ),
                       0,
                     ),
@@ -74,8 +107,12 @@ class OnboardingScreen extends StatelessWidget {
                           color: AppColors.violet,
                         ),
                         title: Text(
-                            "Connectez-vous rapidement.",
-                            style: TextStyle(fontFamily: AppsFont.font2,  fontSize: 17),),
+                          "Connectez-vous rapidement.",
+                          style: TextStyle(
+                            fontFamily: AppsFont.font2,
+                            fontSize: 17,
+                          ),
+                        ),
                       ),
                       1,
                     ),
@@ -86,8 +123,12 @@ class OnboardingScreen extends StatelessWidget {
                           color: AppColors.violet,
                         ),
                         title: Text(
-                            "Gérez vos données facilement.",
-                            style: TextStyle(fontFamily: AppsFont.font2, fontSize: 17),),
+                          "Gérez vos données facilement.",
+                          style: TextStyle(
+                            fontFamily: AppsFont.font2,
+                            fontSize: 17,
+                          ),
+                        ),
                       ),
                       2,
                     ),
@@ -96,6 +137,7 @@ class OnboardingScreen extends StatelessWidget {
               ),
             ),
 
+            
             // Barre de navigation en bas
             Padding(
               padding: const EdgeInsets.all(16.0),
@@ -120,15 +162,15 @@ class OnboardingScreen extends StatelessWidget {
                   ),
                   ElevatedButton(
                     style: ButtonStyle(
-                      backgroundColor: WidgetStateProperty.all(
+                      backgroundColor: MaterialStateProperty.all(
                           AppColors.violet), // Couleur de fond violette
-                      shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(
                               8.0), // Bords légèrement arrondis
                         ),
                       ),
-                      padding: WidgetStateProperty.all(
+                      padding: MaterialStateProperty.all(
                         const EdgeInsets.symmetric(
                             horizontal: 20.0,
                             vertical: 12.0), // Marges internes
@@ -149,7 +191,7 @@ class OnboardingScreen extends StatelessWidget {
                         color: Colors.white, // Couleur du texte en blanc
                         fontWeight: FontWeight.bold,
                         fontFamily: AppsFont.font2,
-                        fontSize: 16 // Texte en gras
+                        fontSize: 16, // Texte en gras
                       ),
                     ),
                   ),
