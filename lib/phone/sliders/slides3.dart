@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:mpay/phone/sliders/animation-screen.dart';
+import 'package:mpay/phone/auth_connexion/phone_connexion_screen.dart';
 import 'package:mpay/phone/sliders/images_slides.dart';
 import 'package:mpay/phone/sliders/slides2.dart';
-import 'package:mpay/phone/sliders/slides_animations.dart';
+import 'package:mpay/tools/animations.dart';
 import 'package:mpay/tools/colors.dart';
 import 'package:mpay/tools/font.dart';
 
@@ -146,7 +146,7 @@ class ThirdOnboardingScreen extends StatelessWidget {
                       Navigator.push(
                         context,
                         SlidePageRoute(
-                          page: const HomeScreen(),
+                          page:  PhoneConnexionScreen(),
                         ),
                       );
                     },
@@ -170,16 +170,4 @@ class ThirdOnboardingScreen extends StatelessWidget {
   }
 }
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
 
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
-}

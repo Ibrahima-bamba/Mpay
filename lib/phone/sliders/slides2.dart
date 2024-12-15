@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:mpay/phone/sliders/animation-screen.dart';
 import 'package:mpay/phone/sliders/images_slides.dart';
 import 'package:mpay/phone/sliders/slides1.dart';
 import 'package:mpay/phone/sliders/slides3.dart';
-import 'package:mpay/phone/sliders/slides_animations.dart';
+import 'package:mpay/tools/animations.dart';
 import 'package:mpay/tools/colors.dart';
 import 'package:mpay/tools/font.dart';
 
@@ -164,7 +163,7 @@ class OnboardingScreen extends StatelessWidget {
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(
                           AppColors.violet), // Couleur de fond violette
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(
                               8.0), // Bords légèrement arrondis

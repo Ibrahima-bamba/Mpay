@@ -10,6 +10,8 @@ class PhoneFirstScreen extends StatefulWidget {
 class _PhoneFirstScreenState extends State<PhoneFirstScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Center(
+      child: Text("Salut"),
+    );
   }
 }
